@@ -5,16 +5,24 @@ import FilterSelection from './components/filterSelection';
 import { useEffect, useState } from 'react';
 
 function App() {
+  const [filters, setFilters]:any = useState([
+    '',false,''
+  ]);
   const [valoriPost, setValoriPost]:any = useState([
-    '','0',''
+    '',false,''
   ]);
 
-  const sendValoriPost = (valueArray:any) => {
-    setValoriPost(valueArray );
+  const sendFilters = (valueArray:any) => {
+    setFilters(valueArray );
+  setValoriPost(valueArray );
     
     console.log('USERSID layout',valueArray)
   }
-
+const SendValoriPost = (click:any) => {
+  setValoriPost(click );
+    
+    console.log('USERSID valori click',click)
+  }
   return (
     <div className='App'>
       <div className="Rettangolo888">
@@ -26,7 +34,7 @@ function App() {
       <div className='Rettangolo1'>
         <h1>FILTERS</h1>
         <FilterSelection
-         valoriPost={valoriPost} sendValoriPost ={sendValoriPost}/>
+         filters={filters} sendFilters ={sendFilters}/>
       </div>
       <div className='Rettangolo2'>
         <div className='flex-container1'>
@@ -35,7 +43,7 @@ function App() {
           <h3 className='column3'>COMPLETED</h3>
         </div>
         <div className='Line1'></div>
-            <FetchTodos valoriPost={valoriPost}/>
+            <FetchTodos valoriPost={valoriPost} SendValoriPost={SendValoriPost}/>
       </div>
     </div>
   );

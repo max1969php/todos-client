@@ -1,25 +1,37 @@
 import React, {  useState, useEffect } from 'react';
 import Pagination from './pagination'
-
-const FetchTodos = ({valoriPost}:{valoriPost:any} )=>{
+let prevValoriPost:any=['',true,'']
+const FetchTodos = (props:any )=>{
     
-  console.log('valPPPP',valoriPost)
+  console.log('valPPPP',props)
+  if(props.valoriPost[1]!=prevValoriPost[1]){
+    console.log('confronto',prevValoriPost[1]!=props.valoriPost[1],prevValoriPost[1],props.valoriPost[1])
+    fetchData()
+    prevValoriPost[1]=props.valoriPost[1]
+  }else{
+    console.log('confronto',prevValoriPost[1]!=props.valoriPost[1],prevValoriPost[1],props.valoriPost[1])
+    
+  }
   
     const [data, setData] = useState([])
     let todo=[]
+
+    function handleClick(){
+      fetchData()
+    }
     
-                // completedSelector: valoriPost[1],
-                // usersID:valoriPost[2].toString(),
-                // searchText:valoriPost[0],
+                // completedSelector: props.valoriPost[1],
+                // usersID:props.valoriPost[2].toString(),
+                // searchText:props.valoriPost[0],
   function fetchData  ()  {
-      console.log('valpost',valoriPost[2])
+      console.log('valpost',props.valoriPost[2])
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                 completedSelector:0,
-                 usersID:[1,2,3,4,5,6,7,8,9,10],
-                 searchText:'',
+                 completedSelector:props.valoriPost[1],
+                 usersID:props.valoriPost[2],
+                 searchText:props.valoriPost[0],
                  })
         };
       fetch("http://localhost:3001/db/exercise", requestOptions)
@@ -104,7 +116,7 @@ const FetchTodos = ({valoriPost}:{valoriPost:any} )=>{
     }
 
   return (
-    <>
+    <div>
       <div>
           {returnTableData()}   
       </div>
@@ -115,7 +127,8 @@ const FetchTodos = ({valoriPost}:{valoriPost:any} )=>{
         <strong>{inizio}</strong>
       </div>
       </div>
-    </>
+      <button onClick={handleClick}>ciao</button>
+    </div>
   )
 }
 export default FetchTodos
