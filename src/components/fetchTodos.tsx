@@ -2,6 +2,7 @@ import React, {  useState, useEffect } from 'react';
 import Pagination from './pagination'
 
 const FetchTodos = ({valoriPost}:{valoriPost:any} )=>{
+    
   console.log('valPPPP',valoriPost)
   
     const [data, setData] = useState([])
@@ -11,7 +12,7 @@ const FetchTodos = ({valoriPost}:{valoriPost:any} )=>{
                 // usersID:valoriPost[2].toString(),
                 // searchText:valoriPost[0],
   function fetchData  ()  {
-      console.log('valpost',valoriPost[2].toString())
+      console.log('valpost',valoriPost[2])
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

@@ -1,19 +1,15 @@
+import React from 'react';
 import './../App.css';
 
 
 const Pagination = (props:any)=>{
 console.log(props.len)
-   const onClick1 = () => {
-      props.sendInizio(-5)
-   }
-   const onClick2 = () => {
-      props.sendInizio(-1)
-   }
-   const onclick0 = (value:number)=>{
-      console.log(value)
+   type ClickHandler = (value: number) => (e: React.MouseEvent) => void;
+   const clickHandler: ClickHandler = (value) => (e) => {
+      e.preventDefault();
+      console.log('click',value)
       props.sendInizio(value)
-   }
-   
+   };
    const returnPages =()=>{
      // let pages=props.len/5
      let i
@@ -25,8 +21,9 @@ console.log(props.len)
       pages.push(i)
      }
       return pages.map((page:any) => {
+         console.log(page)
           return (
-           <button onClick={()=>onclick0(page)}        
+           <button key={page} onClick={clickHandler(page)}    
               style={{
                cursor: 'pointer',
             }}>{page+1}
@@ -36,13 +33,23 @@ console.log(props.len)
    }  
    return(
        <div >
-           <button onClick={onClick1} id="prev"        
+        <div className='pagination-box'>
+          <div className='p-box1'></div>
+          <div className='p-box2 p-box-color'>1</div>
+          <div className='p-box3 p-box-color page-selected'>2</div>
+          <div className='p-box4 p-box-color'>3</div>
+          <div className='p-box5 p-box-color'>4</div>
+          <div className='p-box6 p-box-color'>...</div>
+          <div className='p-box7 p-box-color'>...</div>
+          <div className='p-box8'></div>
+        </div>
+           <button onClick={clickHandler(-5)} id="prev"        
               style={{
                cursor: 'pointer',
             }}>A
            </button>
            {returnPages()}
-           <button onClick={onClick2} id="next"        
+           <button onClick={clickHandler(-1)} id="next"        
               style={{
                cursor: 'pointer',
             }}>Z

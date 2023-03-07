@@ -18,7 +18,6 @@ const FetchUsers = (props:any)=>{
     useEffect(() => {
       fetchData()
     }, [])
- 
      // Handle the onChange event of the select
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedOptions = event.currentTarget.selectedOptions;

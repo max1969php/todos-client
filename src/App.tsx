@@ -4,7 +4,6 @@ import FetchTodos from './components/fetchTodos';
 import FilterSelection from './components/filterSelection';
 import { useEffect, useState } from 'react';
 
-
 function App() {
   const [valoriPost, setValoriPost]:any = useState([
     '','0',''
@@ -26,7 +25,7 @@ function App() {
       </div>
       <div className='Rettangolo1'>
         <h1>FILTERS</h1>
-        <FilterSelection onStateChange={sendValoriPost}
+        <FilterSelection
          valoriPost={valoriPost} sendValoriPost ={sendValoriPost}/>
       </div>
       <div className='Rettangolo2'>
@@ -37,19 +36,13 @@ function App() {
         </div>
         <div className='Line1'></div>
             <FetchTodos valoriPost={valoriPost}/>
-        <div className='pagination-box'>
-          <div className='p-box1'></div>
-          <div className='p-box2 p-box-color'>1</div>
-          <div className='p-box3 p-box-color page-selected'>2</div>
-          <div className='p-box4 p-box-color'>3</div>
-          <div className='p-box5 p-box-color'>4</div>
-          <div className='p-box6 p-box-color'>...</div>
-          <div className='p-box7 p-box-color'>...</div>
-          <div className='p-box8'></div>
-        </div>
       </div>
     </div>
   );
 }
 
 export default App;
+function componentDidUpdate() {
+  throw new Error('Function not implemented.');
+}
+

@@ -4,14 +4,11 @@ import FetchUsers from './fetchUsers';
 import './../App.css';
 import {useState} from 'react';
 
-let initialArray = [
-    '','0',''
-  ];
 
 function FilterSelection (props:any) {
     // track "subtotals" in one place in state;
     // the total value of all subtotals can be trivially derived from this
-    let [valueArray] = useState(initialArray);
+    let [valueArray] = useState(props.valoriPost);
 
     // our onChange handler will update the index of "subtotals"
     // with the passed new value
