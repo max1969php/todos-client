@@ -1,10 +1,11 @@
-import React from 'react';
-import './App.css';
-import FilterSelection from './components/filterSelection';
 import { useState } from 'react';
+import './App.css';
+import { useNavigate } from 'react-router-dom';
+import FilterSelection from './components/filterSelection';
 import Pagination from './components/pagination';
 
 function App() {
+  const navigate = useNavigate();
   const [filters, setFilters]:any = useState([
     '',false,''
   ]);
@@ -29,8 +30,9 @@ function App() {
       })
     };
     fetch("http://localhost:3001/db/exercise", requestOptions)
-      .then(response => {return response.json()})
-      .then(data => {setData(data['results'])
+      .then(response => {return response.json();})
+      .then(data => {console.log(data['results']);setData(data['results'])
+      
     })
   }
 
@@ -51,9 +53,11 @@ function App() {
     todo=data.slice(inizio,inizio+5)
     
     return todo.map((items) => {
-      const { id,userID, title, completed } = items;
+      const { id,userID,name, title, completed } = items;
       return (
-        <div className='tableBox' newdata-id={id} key={id} 
+        <div className='tableBox'
+        onClick={() => navigate('edit?id='+id)}
+        newdata-id={id} key={id} 
         style={{
           display:'flex',
           flexDirection:'row',
@@ -70,14 +74,15 @@ function App() {
           paddingTop:'10px',
           backgroundColor: 'white',
           borderBottom:'solid',
-          borderBottomColor:'#00A0DF'
+          borderBottomColor:'#00A0DF',
+          cursor: 'pointer',
         }}>
           <p
           style={{
             flex:'0 0 90px',
             textAlign :'center',
           }}>
-            {userID}</p>
+            {userID+' - '+name}</p>
             <p
           style={{
             flex:'0 0 80px',
