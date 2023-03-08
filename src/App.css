@@ -159,6 +159,12 @@ z-index: 20;
   border: 1px solid #003479;
   opacity: 1;
 }
+.select-user-down-true {
+  display:block;
+}
+.select-user-down-false {
+  display:none;
+}
 .down {/* Layout Properties */
   visibility: visible;
   position: absolute;

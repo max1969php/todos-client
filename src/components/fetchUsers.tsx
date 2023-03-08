@@ -13,7 +13,7 @@ const FetchUsers = (props:any)=>{
     for (let i = 0; i < selectedOptions.length; i++) {
       usersID.push(Number(selectedOptions[i].value));
     }
-
+    
     setSelectedValue(usersID);
   };
   
@@ -35,7 +35,15 @@ const FetchUsers = (props:any)=>{
     useEffect(() => {
       fetchData()
     }, [])
+
     
+    const [isOpen, setIsOpen] = useState(true);
+
+    function handleClick  (event:any) {
+      // 👇️ toggle isOpen state on click
+      setIsOpen(current => !current);
+    }
+
     return(
       <div>
         <div id="select_user_id"
@@ -49,13 +57,12 @@ const FetchUsers = (props:any)=>{
           SELECT USER ID
         </div>
         <div className="dropdown-container">
-          <select className="select_user_down"
+          <select className={isOpen ? 'select-user-down-false':'select-user-down-true'}
             onChange={handleChange} 
             multiple={true}
             autoFocus={true}
             size={10}
             style={{
-              display:'block',
               position:'absolute',
               width:'220px',
             }}>
@@ -68,9 +75,10 @@ const FetchUsers = (props:any)=>{
             })}
           </select>
           <button className='down'
-               style={{
-                cursor: 'pointer',
-             }}>
+            onClick={handleClick}
+            style={{
+              cursor: 'pointer',
+            }}>
           </button>
         </div> 
       </div>

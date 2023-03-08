@@ -5,8 +5,8 @@ const CompletedSelector = (props:any)=>{
     const [isActive, setIsActive] = useState(true);
 
     const handleClick = (event:any) => {
-    // 👇️ toggle isActive state on click and send actual value
-    setIsActive(current => !current);
+        // toggle isActive state on click and send actual value
+        setIsActive(current => !current);
     props.onChange1(isActive,1)
     }
 
