@@ -7,7 +7,6 @@ console.log(props.len)
    type ClickHandler = (value: number) => (e: React.MouseEvent) => void;
    const clickHandler: ClickHandler = (value) => (e) => {
       e.preventDefault();
-      console.log('click',value)
       props.sendInizio(value)
    };
    const returnPages =()=>{
@@ -15,13 +14,11 @@ console.log(props.len)
      let i
      let pages:any=[]
      let nPages:Number=(props.len)/5;
-     console.log('npages',nPages)
      if(nPages>5)nPages=5
      for(i=0;i<nPages;i++){
       pages.push(i)
      }
       return pages.map((page:any) => {
-         console.log(page)
           return (
            <button key={page} onClick={clickHandler(page)}    
               style={{

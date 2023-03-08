@@ -1,18 +1,10 @@
 import React, {  useState, useEffect } from 'react';
 import Pagination from './pagination'
-let prevValoriPost:any=['',true,'']
+
 const FetchTodos = (props:any )=>{
     
   console.log('valPPPP',props)
-  if(props.valoriPost[1]!=prevValoriPost[1]){
-    console.log('confronto',prevValoriPost[1]!=props.valoriPost[1],prevValoriPost[1],props.valoriPost[1])
-    fetchData()
-    prevValoriPost[1]=props.valoriPost[1]
-  }else{
-    console.log('confronto',prevValoriPost[1]!=props.valoriPost[1],prevValoriPost[1],props.valoriPost[1])
-    
-  }
-  
+
     const [data, setData] = useState([])
     let todo=[]
 

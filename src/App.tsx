@@ -6,10 +6,10 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [filters, setFilters]:any = useState([
-    '',false,''
+    '',false,[1,2,3,4,5,6,7,8,9,10]
   ]);
   const [valoriPost, setValoriPost]:any = useState([
-    '',false,''
+    '',false,[1,2,3,4,5,6,7,8,9,10]
   ]);
 
   const sendFilters = (valueArray:any) => {
@@ -43,7 +43,7 @@ const SendValoriPost = (click:any) => {
           <h3 className='column3'>COMPLETED</h3>
         </div>
         <div className='Line1'></div>
-            <FetchTodos valoriPost={valoriPost} SendValoriPost={SendValoriPost}/>
+            <FetchTodos valoriPost={valoriPost}/>
       </div>
     </div>
   );
