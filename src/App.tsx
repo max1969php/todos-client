@@ -35,9 +35,6 @@ function App() {
       .then(data => {setData(data['results'])
     })
   }
-  useEffect(() => {
-  fetchData()
-  }, [])
 
   const [inizio, setInizio] = useState(0);
   
@@ -108,7 +105,7 @@ function App() {
       )
     });
   }
-  
+
   return (
     <div className='App'>
       <div className="Rettangolo888">
