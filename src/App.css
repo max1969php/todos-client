@@ -240,8 +240,8 @@ opacity: 1;
 .pagination-box {
   position: absolute;
   top: 570px;
-  left: 294px;  
-  width: 242px;
+  left: 260px;  
+  width: 300px;
   height: 25px;
   display:flex;
   flex-direction: row;
@@ -268,23 +268,41 @@ opacity: 1;
   color:#fff;
   border-radius: 50%;
 }
-.p-box1 {
+.p-box1-inactive {
   /* UI Properties */
   position: relative;
   top: -3px;
   width: 30px;
   height: 30px;
   transform: scale(0.5);
-background: transparent url('assets/img/pagination-left-arrow-NOT-active.png') 0% 0% no-repeat padding-box;
+  background: transparent url('assets/img/pagination-left-arrow-NOT-active.png') 0% 0% no-repeat padding-box;
 }
-.p-box8 {
+.p-box1-active {
   /* UI Properties */
   position: relative;
   top: -3px;
   width: 30px;
   height: 30px;
   transform: scale(0.5);
-background: transparent url('assets/img/pagination-right-arrow-active.png') 0% 0% no-repeat padding-box;
+  background: transparent url('assets/img/pagination-left-arrow-active.png') 0% 0% no-repeat padding-box;
+}
+.p-box8-active {
+  /* UI Properties */
+  position: relative;
+  top: -3px;
+  width: 30px;
+  height: 30px;
+  transform: scale(0.5);
+  background: transparent url('assets/img/pagination-right-arrow-active.png') 0% 0% no-repeat padding-box;
+}
+.p-box8-inactive {
+  /* UI Properties */
+  position: relative;
+  top: -3px;
+  width: 30px;
+  height: 30px;
+  transform: scale(0.5);
+  background: transparent url('assets/img/pagination-right-arrow-NOT-active.png') 0% 0% no-repeat padding-box;
 }
 @media screen and (max-width: 1600px) {
   .aalto_it {

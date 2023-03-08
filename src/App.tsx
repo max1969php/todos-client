@@ -43,7 +43,7 @@ function App() {
     if(cambio===-5 && inizio<5)return;
     if(cambio===-1 && inizio>=(data.length-5))return;
     if(cambio===-1 && inizio<(data.length-5))offset=5;
-    if(cambio>=0){setInizio(cambio*5);return};
+    if(cambio>=0){setInizio(cambio*5-5);return};
     setInizio(inizio +offset);
     }
 
