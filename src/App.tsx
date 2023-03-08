@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import FilterSelection from './components/filterSelection';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Pagination from './components/pagination';
 
 function App() {
@@ -14,8 +14,6 @@ function App() {
   const sendFilters = (valueArray:any) => {
     setFilters(valueArray );
     fetchData()
-    
-    console.log('USERSID layout',valueArray)
   }
 
   let todo=[]
@@ -38,9 +36,9 @@ function App() {
 
   const [inizio, setInizio] = useState(0);
   
-  const sendInizio = (cambio:number) => {;
+  const sendInizio = (cambio:number) => {
+    console.log('cambio',cambio)
     let offset:number=0;
-    console.log(cambio);
     if(cambio===-5 && inizio>=5)offset=-5;
     if(cambio===-5 && inizio<5)return;
     if(cambio===-1 && inizio>=(data.length-5))return;
@@ -48,17 +46,14 @@ function App() {
     if(cambio>=0){setInizio(cambio*5);return};
     setInizio(inizio +offset);
     }
-    const returnTableData = () => {
-    
-    
-    console.log('DATI TODOS',data)
+
+  const returnTableData = () => {   
     todo=data.slice(inizio,inizio+5)
-    console.log('new data',todo)
     
     return todo.map((items) => {
       const { id,userID, title, completed } = items;
       return (
-        <div newdata-id={id} key={id} 
+        <div className='tableBox' newdata-id={id} key={id} 
         style={{
           display:'flex',
           flexDirection:'row',
@@ -109,15 +104,14 @@ function App() {
   return (
     <div className='App'>
       <div className="Rettangolo888">
-        <div className='aalto_it'/>
+        <div className='aalto_it'></div>
         <div className="Rettangolo889">
           <div className='segoe'>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco</div>
         </div>
       </div>
       <div className='Rettangolo1'>
         <h1>FILTERS</h1>
-        <FilterSelection
-         filters={filters} sendFilters ={sendFilters}/>
+        <FilterSelection filters={filters} sendFilters ={sendFilters}/>
       </div>
       <div className='Rettangolo2'>
         <div className='flex-container1'>
@@ -126,18 +120,14 @@ function App() {
           <h3 className='column3'>COMPLETED</h3>
         </div>
         <div className='Line1'></div>
-    <div>
-      <div>
-          {returnTableData()}   
-      </div>
-      
-      <div id='pager'>
-          <Pagination sendInizio={sendInizio} len={data.length}/>
-      <div>
-        <strong>{inizio}</strong>
-      </div>
-      </div>
-    </div>
+        <div>
+          <div>
+              {returnTableData()}   
+          </div>
+          <div>
+            <Pagination sendInizio={sendInizio} len={data.length} inizio={inizio}/>
+          </div>
+        </div>
       </div>
     </div>
   );

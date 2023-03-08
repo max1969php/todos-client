@@ -148,6 +148,32 @@ z-index: 20;
 .loupe2:hover {
   opacity: 0.5;
 }
+.dropdown-container {
+  visibility: visible;
+  position: absolute;
+  top: 363px;
+  left: 30px;
+  width: 275px;
+  height: 50px;
+  /*background: transparent url('img/Rettangolo 4.png') 0% 0% no-repeat padding-box;*/
+  border: 1px solid #003479;
+  opacity: 1;
+}
+.down {/* Layout Properties */
+  visibility: visible;
+  position: absolute;
+  border: none;
+  top: 12.5px;
+  left: 240px;
+  width: 25px;
+  height: 25px;
+  /* UI Properties */
+  background: transparent url('assets/img/down.svg') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.down:hover {
+  opacity:0.7;
+}
 #rettangolo_6 {
   /* Layout Properties */
   position: absolute;
@@ -212,7 +238,7 @@ opacity: 1;
   background-color: rgb(202, 200, 200);
 }
 .pagination-box {
-  position: inherit;
+  position: absolute;
   top: 570px;
   left: 294px;  
   width: 242px;
@@ -222,14 +248,10 @@ opacity: 1;
   justify-content: space-between;
 }
 .completed1 {
-    flex:'0 0 90px';
-    text-align :'center';
   /* UI Properties */
   background: transparent url('assets/img/completed-button.png') 0% 0% no-repeat padding-box;
 }
 .completed0 {
-    flex:'0 0 90px';
-    text-align :'center';
   /* UI Properties */
   background: transparent url('assets/img/close-button.png') 0% 0% no-repeat padding-box;
 }
@@ -240,8 +262,8 @@ opacity: 1;
 }
 .page-selected {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background-color: #003479;
   color:#fff;
   border-radius: 50%;
@@ -249,7 +271,7 @@ opacity: 1;
 .p-box1 {
   /* UI Properties */
   position: relative;
-  top: -6px;
+  top: -3px;
   width: 30px;
   height: 30px;
   transform: scale(0.5);
@@ -258,7 +280,7 @@ background: transparent url('assets/img/pagination-left-arrow-NOT-active.png') 0
 .p-box8 {
   /* UI Properties */
   position: relative;
-  top: -6px;
+  top: -3px;
   width: 30px;
   height: 30px;
   transform: scale(0.5);

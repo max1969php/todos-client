@@ -3,7 +3,7 @@ import './../App.css';
 
 
 const Pagination = (props:any)=>{
-console.log(props.len)
+console.log(props)
    type ClickHandler = (value: number) => (e: React.MouseEvent) => void;
    const clickHandler: ClickHandler = (value) => (e) => {
       e.preventDefault();
@@ -19,11 +19,21 @@ console.log(props.len)
       pages.push(i)
      }
       return pages.map((page:any) => {
+         console.log('page,props.inizio',page,props.inizio)
+         let paginaInizioAttuale=props.inizio/5+1
+         console.log('paginainizioattuale',paginaInizioAttuale,'page',page,'nume sul tasto',page+1+(props.inizio/5))
+         let x:string= ' p-box-color'
+         let bcColor:string='#f4f4f4'
+         if(page==0) bcColor='#003479'
+         
+         if(page==0)x='page-selected p-box-color'
           return (
-           <button key={page} onClick={clickHandler(page)}    
+           <button className={x } key={paginaInizioAttuale+page} onClick={clickHandler(paginaInizioAttuale+page)}    
               style={{
                cursor: 'pointer',
-            }}>{page+1}
+               border:'none',
+               backgroundColor:bcColor,
+            }}>{page+1+(props.inizio/5)}
            </button>            
          )
       })
@@ -31,26 +41,36 @@ console.log(props.len)
    return(
        <div >
         <div className='pagination-box'>
-          <div className='p-box1'></div>
-          <div className='p-box2 p-box-color'>1</div>
-          <div className='p-box3 p-box-color page-selected'>2</div>
-          <div className='p-box4 p-box-color'>3</div>
-          <div className='p-box5 p-box-color'>4</div>
-          <div className='p-box6 p-box-color'>...</div>
-          <div className='p-box7 p-box-color'>...</div>
-          <div className='p-box8'></div>
-        </div>
-           <button onClick={clickHandler(-5)} id="prev"        
+           <button className='p-box1' onClick={clickHandler(-5)} id="prev"        
               style={{
                cursor: 'pointer',
-            }}>A
+               border:'none',
+            }}>
            </button>
            {returnPages()}
-           <button onClick={clickHandler(-1)} id="next"        
+           <p className='p-box7' id="next"        
+              style={{
+               border:'none',
+               color:'#003479',
+               position:'relative',
+               top:'-1vh',
+               fontSize:'16rem',
+            }}>...
+           </p>
+           <button className='p-box7' onClick={clickHandler(-1)} id="next"        
               style={{
                cursor: 'pointer',
-            }}>Z
+               border:'none',
+               color:'#003479',
+            }}>{Number((props.len)/5).toFixed(0)}
            </button>
+           <button className='p-box8' onClick={clickHandler(-1)} id="next"        
+              style={{
+               cursor: 'pointer',
+               border:'none',
+            }}>
+           </button>
+        </div>
        </div>
    ) 
 }

@@ -35,6 +35,7 @@ const FetchUsers = (props:any)=>{
     useEffect(() => {
       fetchData()
     }, [])
+    
     return(
       <div>
         <div id="select_user_id"
@@ -47,26 +48,26 @@ const FetchUsers = (props:any)=>{
           }}>
           SELECT USER ID
         </div>
-        <div id="rettangolo_4" className="dropdown-container">
-          <select className="select_user_down" id="select_user_down" 
+        <div className="dropdown-container">
+          <select className="select_user_down"
             onChange={handleChange} 
             multiple={true}
+            autoFocus={true}
+            size={10}
             style={{
+              display:'block',
               position:'absolute',
-              top:'363px',
-              left:'30px',
-              width:'275px',
-              height:'200px',
+              width:'220px',
             }}>
             {users.map((option:any) => {
               return (
-                <option selected key={option.id} value={option.id}>
+                <option key={option.id} value={option.id}>
                   {option.name}
                 </option>
               );
             })}
           </select>
-          <button id='down'
+          <button className='down'
                style={{
                 cursor: 'pointer',
              }}>
