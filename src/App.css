@@ -222,10 +222,14 @@ opacity: 1;
   justify-content: space-between;
 }
 .completed1 {
+    flex:'0 0 90px';
+    text-align :'center';
   /* UI Properties */
   background: transparent url('assets/img/completed-button.png') 0% 0% no-repeat padding-box;
 }
 .completed0 {
+    flex:'0 0 90px';
+    text-align :'center';
   /* UI Properties */
   background: transparent url('assets/img/close-button.png') 0% 0% no-repeat padding-box;
 }
