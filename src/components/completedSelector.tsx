@@ -1,5 +1,4 @@
 import {useState} from 'react';
-import './../App.css';
 
 const CompletedSelector = (props:any)=>{
     const [isActive, setIsActive] = useState(true);

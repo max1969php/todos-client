@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import './../App.css';
+import './../assets/css/App.css';
 
 const InputSearch = (props:any)=>{
     const [inputText, setInputText] = useState('');

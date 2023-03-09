@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 
-const FetchUsers = (props:any)=>{
+function FetchUsers(props:any){
     const [users, setUsers] = useState([])
     const [selectedValue, setSelectedValue] = useState();  
 
      // Handle the onChange event of the select
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+     function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
     const selectedOptions = event.currentTarget.selectedOptions;
 
     let  usersID:any=[];
@@ -18,11 +18,10 @@ const FetchUsers = (props:any)=>{
   };
   
   useEffect(() => {
-    console.log("Value of Selected client in State is: ", selectedValue);
     props.onChange2(selectedValue,2)
   }, [selectedValue]);
     
-    const fetchData = () => {
+  function fetchData(){
       fetch("http://localhost:3001/db/users/")
         .then(response => {
           return response.json()

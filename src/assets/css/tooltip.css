@@ -1,17 +1,19 @@
 .tooltip {
-    position: relative;
-    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    background: #003479;
     color: white;
     visibility: hidden;
     padding: 5px;
     border-radius: 5px;
+    z-index:20;
   }
-  .tooltip-arrow {
+  /*.tooltip-arrow {
     position: absolute;
     top: 100%;
     left: 50%;
     border-width: 5px;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.7) transparent transparent;
-  }
-  
+  }*/

@@ -1,7 +1,7 @@
 import CompletedSelector from './completedSelector';
 import InputSearch from './inputSearch';
 import FetchUsers from './fetchUsers';
-import './../App.css';
+import './../assets/css/App.css';
 import {useState} from 'react';
 
 
@@ -14,10 +14,12 @@ function FilterSelection (props:any) {
     // with the passed new value
     const onChange0 = (newValue:any,index:number) => {
         valueArray[index]=newValue
+        console.log('USERSID',valueArray)
         props.sendFilters(valueArray)
     }
     const onChange1 = (newValue:any,index:number) => {
         valueArray[index]=newValue
+        console.log('USERSID',valueArray)
         props.sendFilters(valueArray)
     }
     const onChange2 = (newValue:any,index:number) => {
@@ -31,10 +33,11 @@ function FilterSelection (props:any) {
             <InputSearch onChange0 = {onChange0}/>
             <CompletedSelector onChange1 = {onChange1}/>
             <FetchUsers onChange2 = {onChange2}/>
-        <button id="reset_filters"
+        <button className="reset-filters"
+        onClick={()=>window.history.go()}
               style={{
                cursor: 'pointer',
-            }}>
+            }}>Reset filters
         </button>
         </div>
     ) 

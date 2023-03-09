@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import GenericButton from './../components/genericComponents/genericButton'
-import Tooltip from "./../components/genericComponents/tooltip";
-let tert:any='test'
+
     let textIsModified:boolean=false
   function FetchTodoByID  (props:any)  {
     const [dataTodo, setDataTodo] = useState<any[]>([])
@@ -12,7 +11,6 @@ let tert:any='test'
         fetch("http://localhost:3001/db/singleTodo/"+props.todoID)
           .then(response => {return response.json();})
           .then(dataTodo => {
-            console.log(dataTodo['results']);
             setDataTodo(dataTodo['results']);
             setCompleted(dataTodo['results'][0]['completed'])
         })
@@ -25,7 +23,6 @@ let tert:any='test'
       if(!window.confirm('Conferma salvataggio modifiche'))return
       let text:any
       if(textIsModified){text=modifiedText}else{text=dataTodo[0]['text']}
-      console.log(text)
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -48,7 +45,6 @@ let tert:any='test'
       fetch("http://localhost:3001/db/deleteTodos/"+props.todoID)
         .then(response => {return response.json();})
         .then(dataTodo => {
-          console.log(dataTodo['results']);
           setDataTodo(dataTodo['results']);
       })
         if(!window.confirm('Cancellazione effettuata'))return
@@ -57,7 +53,6 @@ let tert:any='test'
 
     function completedPost(element:any){
       if(completed===1){setCompleted(0)}else{setCompleted(1)}
-      console.log('completed',completed)
     }
 
       function handleChangeText(e:any){
@@ -86,9 +81,7 @@ let tert:any='test'
                 {myTodo?.text}
             </textarea>
             <h1>{completed}</h1>
-  <Tooltip  >
-    <button>Hover me!</button>
-  </Tooltip>,
+            
             <span onClick={savePost}><GenericButton  text='SALVA'/></span>
             <span onClick={completedPost} ><GenericButton  text='COMPLETATO'/></span>
             <span onClick={deletePost}><GenericButton  text='CANCELLA'/></span>

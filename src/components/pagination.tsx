@@ -1,9 +1,7 @@
 import React from 'react';
-import './../App.css';
 
 
 const Pagination = (props:any)=>{
-   console.log(props)
    type ClickHandler = (value: number) => (e: React.MouseEvent) => void;
    const clickHandler: ClickHandler = (value) => (e) => {
       e.preventDefault();

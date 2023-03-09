@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import './App.css';
-import { useNavigate } from 'react-router-dom';
+import './assets/css/App.css';
+import { useNavigate, useNavigation } from 'react-router-dom';
 import Layout from './layout';
 import FilterSelection from './components/filterSelection';
 import Pagination from './components/pagination';
+import Tooltip from './components/genericComponents/genericTooltip'
+import GenericButton from './components/genericComponents/genericButton';
 
 function App() {
   const navigate = useNavigate();
@@ -15,6 +17,7 @@ function App() {
   
   const sendFilters = (valueArray:any) => {
     setFilters(valueArray );
+    console.log('sendfilters',valueArray)
     fetchData()
   }
 
@@ -32,7 +35,7 @@ function App() {
     };
     fetch("http://localhost:3001/db/exercise", requestOptions)
       .then(response => {return response.json();})
-      .then(data => {console.log(data['results']);setData(data['results'])
+      .then(data => {setData(data['results'])
       
     })
   }
@@ -53,12 +56,13 @@ function App() {
   const returnTableData = () => {   
     todo=data.slice(inizio,inizio+5)
     
-    return todo.map((items) => {
-      const { id,userID,name, title, completed } = items;
+    return todo.map((items) => { 
+      const { id,userID,name, title,text, completed } = items;
       return (
+        <Tooltip key={id} tooltipText={text}>
         <div className='tableBox'
         onClick={() => navigate('edit?id='+id)}
-        newdata-id={id} key={id} 
+        newdata-id={id} 
         style={{
           display:'flex',
           flexDirection:'row',
@@ -103,6 +107,7 @@ function App() {
           className={'completed'+completed }>
             </p>
         </div>
+      </Tooltip>
       )
     });
   }
@@ -113,6 +118,9 @@ function App() {
       <div className='Rettangolo1'>
         <h1>FILTERS</h1>
         <FilterSelection filters={filters} sendFilters ={sendFilters}/>
+      </div>
+      <div className='new-todo'>
+        <span onClick={() => navigate('/create')}><GenericButton text='NUOVO'/></span>
       </div>
       <div className='Rettangolo2'>
         <div className='flex-container1'>

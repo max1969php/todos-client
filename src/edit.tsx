@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import './App.css';
+import './assets/css/App.css';
 import Layout from './layout';
 import FetchTodoByID from './editComponents/fetchTodoByID'
 import GenericButton from './components/genericComponents/genericButton'
@@ -16,7 +16,7 @@ function Edit(){
             <Layout/>
             <div className='Rettangolo-edit'>
                 <FetchTodoByID todoID={todoID}/>
-            <span onClick={() => navigate(-1)} ><GenericButton  text='INDIETRO'/></span>
+            <span onClick={() => navigate('/')} ><GenericButton  text='INDIETRO'/></span>
             </div>
         </div>
     )

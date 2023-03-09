@@ -1,24 +1,24 @@
 @font-face {
   font-family:'karbonSemibold';
-  src: local('karbonSemibold'), url(./assets/fonts/karbon/karbonSemibold.woff) format('woff');
+  src: local('karbonSemibold'), url(./../fonts/karbon/karbonSemibold.woff) format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
 @font-face {
   font-family:'karbonItalic';
-  src: local('karbonItalic'), url(./assets/fonts/karbon/karbonItalic.woff) format('woff');
+  src: local('karbonItalic'), url(./../fonts/karbon/karbonItalic.woff) format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
 @font-face {
   font-family:'karbonRegular';
-  src: local('karbonRegular'), url(./assets/fonts/karbon/karbonRegular.woff) format('woff');
+  src: local('karbonRegular'), url(./../fonts/karbon/karbonRegular.woff) format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
 @font-face {
   font-family:'segoe-ui-regular';
-  src: local('segoe-ui-regular'), url(./assets/fonts/segoe/segoe-ui-regular.woff) format('woff');
+  src: local('segoe-ui-regular'), url(./../fonts/segoe/segoe-ui-regular.woff) format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
@@ -56,6 +56,11 @@ h3{
   font-size: 20rem;
   color: #003479;
 }
+h6{
+  font-family: karbonRegular;
+  font-size: 20rem;
+  color: '#white';
+}
 textarea {
   border: none;
   font-family: karbonRegular;
@@ -81,7 +86,7 @@ textarea {
   width: 140px;
   height: 57px;
   /* UI Properties */
-  background: transparent url('assets/img/aalto_it.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/aalto_it.png') 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 
@@ -154,7 +159,7 @@ background-color: #fff;
   left: 0px;
   width: 50px;
   height: 50px;
-  background: transparent url('assets/img/Rettangolo 5.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/Rettangolo 5.png') 0% 0% no-repeat padding-box;
   opacity: 1;
   z-index: 10;
 }
@@ -168,7 +173,7 @@ height: 25px;
 border:  none;
 
 /* UI Properties */
-background: transparent url('assets/img/loupe.png') 0% 0% no-repeat padding-box;
+background: transparent url('../img/loupe.png') 0% 0% no-repeat padding-box;
 opacity: 1;
 z-index: 20;
 }
@@ -185,9 +190,11 @@ z-index: 20;
   /*background: transparent url('img/Rettangolo 4.png') 0% 0% no-repeat padding-box;*/
   border: 1px solid #003479;
   opacity: 1;
+  z-index: 10;
 }
 .select-user-down-true {
   display:block;
+  background-color: #fff;
 }
 .select-user-down-false {
   display:none;
@@ -201,7 +208,7 @@ z-index: 20;
   width: 25px;
   height: 25px;
   /* UI Properties */
-  background: transparent url('assets/img/down.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/down.png') 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 .down-true {/* Layout Properties */
@@ -213,11 +220,25 @@ z-index: 20;
   width: 25px;
   height: 25px;
   /* UI Properties */
-  background: transparent url('assets/img/down-up.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/down-up.png') 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 .down:hover {
   opacity:0.7;
+}
+.new-todo {
+  /* Layout Properties */
+position: absolute;
+top: 694px;
+left: 350px;
+width: 330px;
+height: 80px;
+justify-content: space-around;
+align-items: stretch;
+vertical-align: middle;
+/* UI Properties */
+background-color: #f4f4f4;
+opacity: 1;
 }
 #rettangolo_6 {
   /* Layout Properties */
@@ -236,11 +257,11 @@ z-index: 20;
 }
 .completed-selector-false {   
   border: none; 
-  background: transparent url('assets/img/Rettangolo 6 off.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/Rettangolo 6 off.png') 0% 0% no-repeat padding-box;
 }
 .completed-selector-true {   
   border: none;     
-  background: transparent url('assets/img/Rettangolo 6 on.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/Rettangolo 6 on.png') 0% 0% no-repeat padding-box;
 }
 .Rettangolo2 {
   /* Layout Properties */
@@ -294,11 +315,29 @@ opacity: 1;
 }
 .completed1 {
   /* UI Properties */
-  background: transparent url('assets/img/completed-button.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/completed-button.png') 0% 0% no-repeat padding-box;
 }
 .completed0 {
   /* UI Properties */
-  background: transparent url('assets/img/close-button.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/close-button.png') 0% 0% no-repeat padding-box;
+}
+.reset-filters {
+  /* Layout Properties */
+  position: absolute;
+  top: 472px;
+  left: 115px;
+  width: 90px;
+  height: 10px;
+  text-align: center;
+  text-decoration: underline;
+  white-space: nowrap;
+  /* UI Properties 
+  background: transparent url('img/Reset filters.png') 0% 0% no-repeat padding-box;*/
+  opacity: 1;
+  border: none;
+  font-family:karbonRegular ;
+  font-size: 20rem;
+  color: #003479;
 }
 .p-box-color {  
   font-family:karbonRegular ;
@@ -320,7 +359,7 @@ opacity: 1;
   width: 30px;
   height: 30px;
   transform: scale(0.5);
-  background: transparent url('assets/img/pagination-left-arrow-NOT-active.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/pagination-left-arrow-NOT-active.png') 0% 0% no-repeat padding-box;
 }
 .p-box1-active {
   /* UI Properties */
@@ -329,7 +368,7 @@ opacity: 1;
   width: 30px;
   height: 30px;
   transform: scale(0.5);
-  background: transparent url('assets/img/pagination-left-arrow-active.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/pagination-left-arrow-active.png') 0% 0% no-repeat padding-box;
 }
 .p-box8-active {
   /* UI Properties */
@@ -338,7 +377,7 @@ opacity: 1;
   width: 30px;
   height: 30px;
   transform: scale(0.5);
-  background: transparent url('assets/img/pagination-right-arrow-active.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/pagination-right-arrow-active.png') 0% 0% no-repeat padding-box;
 }
 .p-box8-inactive {
   /* UI Properties */
@@ -347,13 +386,16 @@ opacity: 1;
   width: 30px;
   height: 30px;
   transform: scale(0.5);
-  background: transparent url('assets/img/pagination-right-arrow-NOT-active.png') 0% 0% no-repeat padding-box;
+  background: transparent url('../img/pagination-right-arrow-NOT-active.png') 0% 0% no-repeat padding-box;
 }
 @media screen and (max-width: 1600px) {
   .aalto_it {
     left: 150px;
   }
   .Rettangolo1 {
+    left: 150px;
+  }
+  .new-todo {
     left: 150px;
   }
   .Rettangolo2 {
@@ -370,6 +412,9 @@ opacity: 1;
   .Rettangolo1 {
     left: 0px;
   }
+  .new-todo {
+    left: 0px;
+  }
   .Rettangolo2 {
     left: 340px;
   }
@@ -384,34 +429,13 @@ opacity: 1;
   .Rettangolo1 {
     left: 0px;
   }
+  .new-todo {
+    left: 0px;
+  }
   .Rettangolo2 {
     left: 340px;
   }
   .segoe {
     width: 450px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .aalto_it {
-    left: 100px;
-  }
-  .Rettangolo1 {
-    left: 100px;
-  }
-  .segoe {
-    left: 100px;
-    width: 450px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .segoe {
-    top: 30px;
-    left: 100px;
-    width: 200px;
-  }
-}
-@media screen and (max-width: 470px) {
-    .Rettangolo1 {
-    left: 0px;
   }
 }

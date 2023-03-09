@@ -1,13 +1,13 @@
 import React from "react";
-import  "./../../tooltip.css";
+import "./../../assets/css/tooltip.css";
 
-export default function Tooltip({children}: {children: any}, {text}: {text: any} , ...rest: any[] ) {
+export default function Tooltip({ children, tooltipText, ...rest }:any) {
   const [show, setShow] = React.useState(false);
 
   return (
     <div>
       <div className="tooltip" style={show ? { visibility: "visible" } : {}}>
-        {text}
+        <h6>{tooltipText}</h6> 
         <span className="tooltip-arrow" />
       </div>
       <div
@@ -16,7 +16,6 @@ export default function Tooltip({children}: {children: any}, {text}: {text: any}
         onMouseLeave={() => setShow(false)}
       >
         {children}
-        
       </div>
     </div>
   );
