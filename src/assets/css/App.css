@@ -388,6 +388,13 @@ opacity: 1;
   transform: scale(0.5);
   background: transparent url('../img/pagination-right-arrow-NOT-active.png') 0% 0% no-repeat padding-box;
 }
+.numero-elementi {
+  position:relative;
+  top: 60rem;
+  font-family: karbonRegular;
+  font-size: 18rem;
+  color: #003479;
+}
 @media screen and (max-width: 1600px) {
   .aalto_it {
     left: 150px;

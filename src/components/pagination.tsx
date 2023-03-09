@@ -1,10 +1,12 @@
 import React from 'react';
 
-
+let currentPage=1
 const Pagination = (props:any)=>{
    type ClickHandler = (value: number) => (e: React.MouseEvent) => void;
    const clickHandler: ClickHandler = (value) => (e) => {
       e.preventDefault();
+      currentPage=value
+      console.log( 'valore ultimo bottone',Number((props.len)/5).toFixed(0))
       props.sendInizio(value)
    };
    const returnPages =()=>{
@@ -104,6 +106,7 @@ const Pagination = (props:any)=>{
             }}>
            </button>
         </div>
+        <div className='numero-elementi'>todos da {currentPage*5-4} a {currentPage*5} di {props.len}</div>
        </div>
    ) 
 }
