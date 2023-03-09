@@ -20,7 +20,7 @@ const Pagination = (props:any)=>{
       }
       return pages.map((page:any) => {
          let paginaInizioAttuale=props.inizio/5+1
-         let maxPage=props.len/5
+         let maxPage=Number((props.len/5).toFixed(0))
          //console.log('paginainizioattuale',paginaInizioAttuale,'page',page,'nume sul tasto',page+1+(props.inizio/5))
          let x:string= ' p-box-color'
          let bcColor:string='#f4f4f4'
@@ -46,7 +46,7 @@ const Pagination = (props:any)=>{
                cursor: 'pointer',
                border:'none',
                backgroundColor:bcColor,
-            }}>{page+1+(props.inizio/5)}
+            }}>{Number((page+1+(props.inizio/5)).toFixed(0))}
            </button>            
          )
       })
