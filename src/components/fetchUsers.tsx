@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const FetchUsers = (props:any)=>{
     const [users, setUsers] = useState([])
-    const [selectedValue, setSelectedValue] = useState();
+    const [selectedValue, setSelectedValue] = useState();  
 
      // Handle the onChange event of the select
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -37,11 +37,13 @@ const FetchUsers = (props:any)=>{
     }, [])
 
     
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(true);  
+    const [isOn, setIsOn] = useState(true);
 
     function handleClick  (event:any) {
       // 👇️ toggle isOpen state on click
       setIsOpen(current => !current);
+      setIsOn(current => !current);
     }
 
     return(
@@ -74,7 +76,7 @@ const FetchUsers = (props:any)=>{
               );
             })}
           </select>
-          <button className='down'
+          <button className={isOn? 'down-false':'down-true'}
             onClick={handleClick}
             style={{
               cursor: 'pointer',

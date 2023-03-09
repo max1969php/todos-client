@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import { useNavigate } from 'react-router-dom';
+import Layout from './layout';
 import FilterSelection from './components/filterSelection';
 import Pagination from './components/pagination';
 
@@ -108,12 +109,7 @@ function App() {
 
   return (
     <div className='App'>
-      <div className="Rettangolo888">
-        <div className='aalto_it'></div>
-        <div className="Rettangolo889">
-          <div className='segoe'>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco</div>
-        </div>
-      </div>
+      <Layout/>
       <div className='Rettangolo1'>
         <h1>FILTERS</h1>
         <FilterSelection filters={filters} sendFilters ={sendFilters}/>

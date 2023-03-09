@@ -19,10 +19,9 @@ const Pagination = (props:any)=>{
        pages.push(i)
       }
       return pages.map((page:any) => {
-         console.log('page,props.inizio',page,props.inizio)
          let paginaInizioAttuale=props.inizio/5+1
          let maxPage=props.len/5
-         console.log('paginainizioattuale',paginaInizioAttuale,'page',page,'nume sul tasto',page+1+(props.inizio/5))
+         //console.log('paginainizioattuale',paginaInizioAttuale,'page',page,'nume sul tasto',page+1+(props.inizio/5))
          let x:string= ' p-box-color'
          let bcColor:string='#f4f4f4'
          if(page==0) bcColor='#003479'
