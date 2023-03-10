@@ -80,6 +80,7 @@ textarea {
 }
 .aalto_it{
   /* Layout Properties */
+  display: none;
   position: relative;
   top: 18px;
   left: 353px;

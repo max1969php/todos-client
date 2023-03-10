@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './assets/css/App.css';
-import { useNavigate, useNavigation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Layout from './layout';
 import FilterSelection from './components/filterSelection';
 import Pagination from './components/pagination';
