@@ -56,7 +56,7 @@ function App() {
   const returnTableData = () => {   
     todo=data.slice(inizio,inizio+5)
     
-    return todo.map((items) => { 
+    return todo.map((items: { id: any; userID: any; name: any; title: any; text: any; completed: any; }) => { 
       const { id,userID,name, title,text, completed } = items;
       return (
         <Tooltip key={id} tooltipText={text}>
