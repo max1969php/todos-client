@@ -8,7 +8,7 @@ import GenericButton from './../components/genericComponents/genericButton'
     const [modifiedText,setModifiedText] =useState<string>()
 
     function fetchDataTodo  ()  {
-        fetch("http://localhost:3001/db/singleTodo/"+props.todoID)
+        fetch("https://massimomazzoleni1969.it/db/singleTodo/"+props.todoID)
           .then(response => {return response.json();})
           .then(dataTodo => {
             setDataTodo(dataTodo['results']);
@@ -33,7 +33,7 @@ import GenericButton from './../components/genericComponents/genericButton'
         })
       };
       console.log('requested',requestOptions)
-        fetch("http://localhost:3001/db/updateTodos/",requestOptions)
+        fetch("https://massimomazzoleni1969.it/db/updateTodos/",requestOptions)
           .then(response => {return response.json();})
           .then(dataTodo => {console.log(dataTodo['results']);setDataTodo(dataTodo['results'])
         })
@@ -42,7 +42,7 @@ import GenericButton from './../components/genericComponents/genericButton'
     }
     function deletePost(element:any){
       if(!window.confirm('Conferma cancellazione del post'))return
-      fetch("http://localhost:3001/db/deleteTodos/"+props.todoID)
+      fetch("https://massimomazzoleni1969.it/db/deleteTodos/"+props.todoID)
         .then(response => {return response.json();})
         .then(dataTodo => {
           setDataTodo(dataTodo['results']);

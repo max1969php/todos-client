@@ -10,7 +10,7 @@ function Create(){
     const [users, setUsers] = useState([])
 
     function fetchData(){
-      fetch("http://localhost:3001/db/users/")
+      fetch("https://massimomazzoleni1969.it/db/users/")
         .then(response => {
           return response.json()
         })
@@ -41,7 +41,7 @@ function Create(){
           })
         };
 
-        fetch("http://localhost:3001/db/newTodos/",requestOptions)
+        fetch("https://massimomazzoleni1969.it/db/newTodos/",requestOptions)
           .then(response => {return response.json();})
           .then(dataTodo => {console.log(dataTodo['results']);
         })

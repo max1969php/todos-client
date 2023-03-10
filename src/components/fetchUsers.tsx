@@ -22,7 +22,7 @@ function FetchUsers(props:any){
   }, [selectedValue]);
     
   function fetchData(){
-      fetch("http://localhost:3001/db/users/")
+      fetch("https://massimomazzoleni1969.it/db/users/")
         .then(response => {
           return response.json()
         })

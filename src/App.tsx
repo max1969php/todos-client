@@ -33,7 +33,7 @@ function App() {
         searchText:filters[0],
       })
     };
-    fetch("http://localhost:3001/db/exercise", requestOptions)
+    fetch("https://massimomazzoleni1969.it/db/exercise", requestOptions)
       .then(response => {return response.json();})
       .then(data => {setData(data['results'])
       
